@@ -1,0 +1,11 @@
+---
+# vars file for cue
+cue_platform: '{{ cue_os }}_{{ cue_arch }}'
+cue_name: cue_v{{ cue_ver }}_{{ cue_platform }}
+cue_archive: '{{ cue_name }}.{{ cue_archive_type | default("tar.gz") }}'
+cue_tmp_archive: /tmp/{{ cue_archive }}
+cue_url: '{{ cue_mirror }}/v{{ cue_ver }}/{{ cue_archive }}'
+cue_checksum: '{{ cue_checksums[cue_ver][cue_platform] }}'
+cue_install_dir: '{{ cue_parent_install_dir }}/{{ cue_name }}'
+cue_exe: '{{ cue_install_dir }}/cue'
+cue_link: '{{ cue_parent_install_dir }}/bin/cue'

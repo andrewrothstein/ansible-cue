@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
+  tasks:
+  - command: /usr/local/bin/cue version
+    register: cue_test_output
+  - name: cue version
+    debug:
+      msg: '{{ cue_test_output.stdout }}'

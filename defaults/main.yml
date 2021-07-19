@@ -1,0 +1,18 @@
+---
+cue_ver: 0.4.0
+cue_os: linux
+cue_arch: amd64
+cue_parent_install_dir: /usr/local
+cue_mirror: https://github.com/cue-lang/cue/releases/download
+# defaults file for cue
+cue_checksums:
+  # https://github.com/cue-lang/cue/releases/download/v0.4.0/checksums.txt
+  '0.4.0':
+    # https://github.com/cue-lang/cue/releases/download/v0.4.0/cue_v0.4.0_darwin_amd64.tar.gz
+    darwin_amd64: sha256:24717a72b067a4d8f4243b51832f4a627eaa7e32abc4b9117b0af9aa63ae0332
+    # https://github.com/cue-lang/cue/releases/download/v0.4.0/cue_v0.4.0_linux_amd64.tar.gz
+    linux_amd64: sha256:a118177d9c605b4fc1a61c15a90fddf57a661136c868dbcaa9d2406c95897949
+    # https://github.com/cue-lang/cue/releases/download/v0.4.0/cue_v0.4.0_linux_arm64.tar.gz
+    linux_arm64: sha256:d101a36607981a7652b7961955a84102c912ac35ca9d91de63a0201f2416ecfa
+    # https://github.com/cue-lang/cue/releases/download/v0.4.0/cue_v0.4.0_windows_amd64.zip
+    windows_amd64: sha256:13a2db61e78473db0fab0530e8ebf70aa37ed6fb88ee14df240880ec7e70c0f1
