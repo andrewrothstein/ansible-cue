@@ -1,5 +1,7 @@
 ---
 # vars file for cue
+cue_os: '{{ ansible_system | lower }}'
+cue_arch: '{{ cue_arch_map[ansible_architecture] }}'
 cue_platform: '{{ cue_os }}_{{ cue_arch }}'
 cue_name: cue_v{{ cue_ver }}_{{ cue_platform }}
 cue_archive: '{{ cue_name }}.{{ cue_archive_type | default("tar.gz") }}'
