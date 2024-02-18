@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,48 +12,49 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install at {{ cue_exe }}
+- name: Check for install at {{ cue_exe }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ cue_exe }}'
   changed_when: false
   register: cue_binary
-- when: not cue_binary.stat.exists
+- name: Downloading and installing cue
+  when: not cue_binary.stat.exists
   block:
-    - name: download {{ cue_url }} to {{ cue_tmp_archive }}
+    - name: Download {{ cue_url }} to {{ cue_tmp_archive }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ cue_url }}'
         dest: '{{ cue_tmp_archive }}'
-        mode: 0644
+        mode: '644'
         checksum: '{{ cue_checksum }}'
-    - name: mkdir {{ cue_install_dir }}
+    - name: Mkdir {{ cue_install_dir }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ cue_install_dir }}'
         state: directory
-        mode: 0755
-    - name: unarchive {{ cue_tmp_archive }} to {{ cue_install_dir }}
+        mode: '755'
+    - name: Unarchive {{ cue_tmp_archive }} to {{ cue_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ cue_tmp_archive }}'
         dest: '{{ cue_install_dir }}'
         creates: '{{ cue_exe }}'
   always:
-    - name: rm -f {{ cue_tmp_archive }}
+    - name: Rm -f {{ cue_tmp_archive }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ cue_tmp_archive }}'
         state: absent
-- name: linking {{ cue_link }} to {{ cue_exe }}
+- name: Linking {{ cue_link }} to {{ cue_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ cue_exe }}'
     dest: '{{ cue_link }}'
     state: link

@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.cure
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/bin/cue version
+    - name: Executing 'cue version'
+      ansible.builtin.command: /usr/local/bin/cue version
+      changed_when: false
       register: cue_test_output
-    - name: cue version
-      debug:
+    - name: Output of 'cue version'
+      ansible.builtin.debug:
         msg: '{{ cue_test_output.stdout }}'
