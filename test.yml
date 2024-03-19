@@ -1,5 +1,5 @@
 ---
-- name: Testing andrewrothstein.cure
+- name: Testing andrewrothstein.cue
   hosts: all
   roles:
     - role: '{{ playbook_dir }}'

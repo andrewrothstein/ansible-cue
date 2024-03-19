@@ -39,4 +39,4 @@ dl_ver() {
     dl $ver $lchecksums windows arm64 zip
 }
 
-dl_ver ${1:-0.7.1}
+dl_ver ${1:-0.8.0}
