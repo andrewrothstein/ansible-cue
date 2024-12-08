@@ -1,5 +1,5 @@
 ---
-cue_ver: 0.10.1
+cue_ver: 0.11.0
 cue_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -238,3 +238,17 @@ cue_checksums:
     windows_amd64: sha256:34a88731391de4f0cd4c43dbd7cba38922eee28103d1c902ad12a993cec12d50
     # https://github.com/cue-lang/cue/releases/download/v0.10.1/cue_v0.10.1_windows_arm64.zip
     windows_arm64: sha256:db09189395e40be14b1e836ad85900274dbf3655974209bad0a5ce69871af7c2
+  # https://github.com/cue-lang/cue/releases/download/v0.11.0/checksums.txt
+  '0.11.0':
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_darwin_amd64.tar.gz
+    darwin_amd64: sha256:55aabc7c279e20654b734275cbbc64f4f6a6be034cdca9eee73cb06813e8bd2d
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_darwin_arm64.tar.gz
+    darwin_arm64: sha256:8db8868b184be737835fe1e4414249b70284b07bf3ebf425f0444d48b90be4ab
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_linux_amd64.tar.gz
+    linux_amd64: sha256:fff7385999390c05c785a5fde5375002c1b02c2cdeae7195efa5e9997000dd47
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_linux_arm64.tar.gz
+    linux_arm64: sha256:fc77673c9e3a3363f045748bad4beda55e8c0c2b371a24c12007ecabc01b1053
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_windows_amd64.zip
+    windows_amd64: sha256:aa58bc7e8623d6da6667de5d3774d8e665c5cb06db059dd071e2fa5e64492519
+    # https://github.com/cue-lang/cue/releases/download/v0.11.0/cue_v0.11.0_windows_arm64.zip
+    windows_arm64: sha256:33a71461e6dcc9a40ece45ad2b852e0795a1a11a91181a91731913da173f676e
